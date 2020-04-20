@@ -1,0 +1,27 @@
+seed = 1
+D = 64
+n_stims = 4
+t_isi = 0.2
+t_stim = 1.0
+auto_direct = 0.0
+use_neurons = True
+decision = 'ia'
+output_threshold = 0.1
+ia_accum_timescale = 2.0
+attention_error = 0.3
+
+scores = array([0.59823278, 0.34128618, 0.34932283, 0.45905872, 0.61966755,
+       0.56815762, 0.45625696, 0.51526389, 0.48575445, 0.48217466,
+       0.2621628 , 0.4385834 ])
+stimuli = [('NEUTRAL0', 'COLOR0', 'neutral'), ('NEUTRAL1', 'COLOR1', 'neutral'), ('NEUTRAL2', 'COLOR2', 'neutral'), ('NEUTRAL3', 'COLOR3', 'neutral'), ('COLOR0', 'COLOR0', 'congruent'), ('COLOR1', 'COLOR1', 'congruent'), ('COLOR2', 'COLOR2', 'congruent'), ('COLOR3', 'COLOR3', 'congruent'), ('COLOR1', 'COLOR0', 'incongruent'), ('COLOR2', 'COLOR1', 'incongruent'), ('COLOR3', 'COLOR2', 'incongruent'), ('COLOR0', 'COLOR3', 'incongruent')]
+neutral = 0.43697512548616424
+congruent = 0.5398365031581756
+incongruent = 0.41716882797590105
+rts = [0.219, 0.747, 0.737, 0.586, 0.504, 0.521, 0.64, 0.553, 0.594, 0.5710000000000001, 0.923, 0.47600000000000003]
+accuracy = [True, True, True, True, True, True, True, True, True, True, True, True]
+rt_neutral = 0.5722499999999999
+rt_congruent = 0.5545
+rt_incongruent = 0.641
+acc_neutral = 1.0
+acc_congruent = 1.0
+acc_incongruent = 1.0
