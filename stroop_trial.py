@@ -142,6 +142,24 @@ class StroopTrial(pytry.PlotTrial):
             for i in range(p.n_stims*3):
                 plt.axvline(i*(p.t_isi+p.t_stim)+p.t_isi, ls='--')
             
+        acc_neutral = sum([0.0 if r is None else 1.0 for r in rts[:p.n_stims]])/p.n_stims
+        acc_congruent = sum([0.0 if r is None else 1.0 for r in rts[p.n_stims:p.n_stims*2]])/p.n_stims
+        acc_incongruent = sum([0.0 if r is None else 1.0 for r in rts[p.n_stims*2:]])/p.n_stims
+        
+        if acc_neutral == 0:
+            rt_neutral = None
+        else:
+            rt_neutral = np.mean([r for r in rts[:p.n_stims] if r is not None])
+            
+        if acc_congruent == 0:
+            rt_congruent = None
+        else:
+            rt_congruent = np.mean([r for r in rts[p.n_stims:p.n_stims*2] if r is not None])
+        if acc_incongruent == 0:
+            rt_incongruent = None
+        else:
+            rt_incongruent = np.mean([r for r in rts[p.n_stims*2:] if r is not None])
+            
         
         return dict(
             scores=scores,
@@ -151,9 +169,12 @@ class StroopTrial(pytry.PlotTrial):
             incongruent=np.mean(scores[p.n_stims*2:]),
             rts=rts,
             accuracy=accuracy,
-            rt_neutral=np.mean(rts[:p.n_stims]),
-            rt_congruent=np.mean(rts[p.n_stims:p.n_stims*2]),
-            rt_incongruent=np.mean(rts[p.n_stims*2:]),
+            rt_neutral=rt_neutral,
+            rt_congruent=rt_congruent,
+            rt_incongruent=rt_incongruent,
+            acc_neutral=acc_neutral,
+            acc_congruent=acc_congruent,
+            acc_incongruent=acc_incongruent,
         )
 
         
